@@ -13,5 +13,7 @@ public interface VeiculoRepository extends JpaRepository<Veiculo, Long> {
 
     List<Veiculo> findByModelo(Modelo modelo);
     List<Veiculo> findByMarca(Marca marca);
+    List<Veiculo> findByPlaca(String placa);
+
 
 }

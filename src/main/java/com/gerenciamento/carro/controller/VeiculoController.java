@@ -71,6 +71,17 @@ public class VeiculoController {
         return new ResponseEntity<>(list, null, HttpStatus.NO_CONTENT);
     }
 
+    @GetMapping("veiculos/{placa}")
+    public ResponseEntity<?> listaPorPlaca(@PathVariable String placa) {
+
+        List<Veiculo> list = veiculoService.getByPlaca(placa);
+
+        if (!list.isEmpty()) {
+            return new ResponseEntity<>(list, null, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(list, null, HttpStatus.NO_CONTENT);
+    }
+
 
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@RequestBody Veiculo veiculo) {

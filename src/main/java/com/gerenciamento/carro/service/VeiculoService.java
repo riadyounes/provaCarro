@@ -48,4 +48,8 @@ public class VeiculoService {
     public List<Veiculo> getByMarca(Marca marca) {
         return veiculoRepository.findByMarca(marca);
     }
+
+    public List<Veiculo> getByPlaca(String placa) {
+        return veiculoRepository.findByPlaca(placa);
+    }
 }
